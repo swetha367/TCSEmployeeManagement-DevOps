@@ -27,19 +27,19 @@ pipeline {
 
         stage('Restore') {
             steps {
-                bat 'dotnet restore EmployeeManagement.sln'
+                bat 'dotnet restore EmployeeManagement.slnx'
             }
         }
 
         stage('Build') {
             steps {
-                bat 'dotnet build EmployeeManagement.sln --configuration %BUILD_CONFIGURATION% --no-restore'
+                bat 'dotnet build EmployeeManagement.slnx --configuration %BUILD_CONFIGURATION% --no-restore'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'dotnet test EmployeeManagement.sln --configuration %BUILD_CONFIGURATION% --no-build'
+                bat 'dotnet test EmployeeManagement.slnx --configuration %BUILD_CONFIGURATION% --no-build'
             }
         }
 
